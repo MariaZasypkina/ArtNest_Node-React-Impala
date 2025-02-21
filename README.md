@@ -9,6 +9,7 @@ Access a random selection of helpful tips for enhancing their productivity and s
 Features
 
 Backend
+
 User Management: Registration, login, and JWT-based authentication.
 Task Management: CRUD operations for a personalized to-do list.
 Artworks: Upload, view, and manage artworks in a gallery.
