@@ -15,7 +15,10 @@ Task Management: CRUD operations for a personalized to-do list.
 Artworks: Upload, view, and manage artworks in a gallery.
 Tips: Serve random tips to users.
 Middleware: Error handling, authentication, and access control.
+
+
 Frontend
+
 Responsive UI: Built with React and vanilla JavaScript.
 Components:
 Header: Navigation and branding.
