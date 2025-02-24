@@ -1,3 +1,4 @@
+// backend/seedGallery.js
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const connectDB = require("../config");
@@ -8,38 +9,99 @@ connectDB();
 
 const seedGallery = async () => {
   try {
-    await Gallery.deleteMany(); // Clear the gallery collection
+    // Clear the gallery collection
+    await Gallery.deleteMany();
     console.log("Old artworks removed.");
 
+    // Array of new artworks with media field
     const artworks = [
-      { title: "Dreamy Sunset", imageUrl: "https://source.unsplash.com/600x400/?sunset,art", description: "A peaceful sunset with surreal colors.", artist: "Alice Green", mood: "serene" },
-      { title: "Abstract Chaos", imageUrl: "https://source.unsplash.com/600x400/?abstract,art", description: "A wild mix of shapes and colors.", artist: "John Doe", mood: "energetic" },
-      { title: "Lonely Road", imageUrl: "https://source.unsplash.com/600x400/?road,art", description: "A road that leads into the unknown.", artist: "Emma White", mood: "mysterious" },
-      { title: "Underwater Dreams", imageUrl: "https://source.unsplash.com/600x400/?underwater,art", description: "A deep dive into the world of imagination.", artist: "Sophia Blue", mood: "dreamy" },
-      { title: "Fiery Passion", imageUrl: "https://source.unsplash.com/600x400/?fire,art", description: "Intense flames representing raw emotions.", artist: "Mike Red", mood: "passionate" },
-      { title: "Ethereal Forest", imageUrl: "https://source.unsplash.com/600x400/?forest,art", description: "A mystical forest covered in fog.", artist: "Liam Brown", mood: "mystical" },
-      { title: "Celestial Reflections", imageUrl: "https://source.unsplash.com/600x400/?space,art", description: "Galaxies reflected in water.", artist: "Stella Nova", mood: "cosmic" },
-      { title: "Golden Hour", imageUrl: "https://source.unsplash.com/600x400/?goldenhour,art", description: "The warm glow of sunset.", artist: "Olivia Gold", mood: "warm" },
-      { title: "Urban Graffiti", imageUrl: "https://source.unsplash.com/600x400/?graffiti,art", description: "A wall full of vibrant street art.", artist: "Banksy Jr.", mood: "rebellious" },
-      { title: "Midnight Reflections", imageUrl: "https://source.unsplash.com/600x400/?night,art", description: "A quiet lake under the moonlight.", artist: "Noah Dark", mood: "calm" },
-      { title: "Vivid Dreams", imageUrl: "https://source.unsplash.com/600x400/?dreams,art", description: "A mix of colors and surreal shapes.", artist: "Mira Lune", mood: "imaginative" },
-      { title: "Mystical Glade", imageUrl: "https://source.unsplash.com/600x400/?glade,art", description: "A hidden forest path glowing with magic.", artist: "Elena Myst", mood: "enchanted" },
-      { title: "Neon Waves", imageUrl: "https://source.unsplash.com/600x400/?neon,art", description: "Bright neon patterns shifting in waves.", artist: "Dylan Flux", mood: "vibrant" },
-      { title: "Silent Observers", imageUrl: "https://source.unsplash.com/600x400/?statue,art", description: "Ancient statues standing in the mist.", artist: "Henry Stone", mood: "timeless" },
-      { title: "Cosmic Dancer", imageUrl: "https://source.unsplash.com/600x400/?dancer,art", description: "A dancer surrounded by cosmic dust.", artist: "Ava Star", mood: "graceful" },
-      { title: "Stormy Mind", imageUrl: "https://source.unsplash.com/600x400/?storm,art", description: "Dark clouds forming a human face.", artist: "Xavier Storm", mood: "intense" },
-      { title: "Digital Rain", imageUrl: "https://source.unsplash.com/600x400/?cyberpunk,art", description: "A city drenched in futuristic neon rain.", artist: "Kai Cyber", mood: "futuristic" },
-      { title: "Frozen Elegance", imageUrl: "https://source.unsplash.com/600x400/?ice,art", description: "A frozen rose trapped in time.", artist: "Isla Frost", mood: "cold" },
-      { title: "Eclipsed", imageUrl: "https://source.unsplash.com/600x400/?eclipse,art", description: "A surreal scene of a solar eclipse.", artist: "Luna Eclipse", mood: "mysterious" },
-      { title: "Sunlit Meadows", imageUrl: "https://source.unsplash.com/600x400/?meadow,art", description: "A soft meadow kissed by sunlight.", artist: "Flora Bright", mood: "peaceful" },
-      { title: "Galactic Bloom", imageUrl: "https://source.unsplash.com/600x400/?galaxy,art", description: "Flowers made of swirling galaxies.", artist: "Nova Petal", mood: "cosmic" },
-      { title: "Rustic Charm", imageUrl: "https://source.unsplash.com/600x400/?vintage,art", description: "A cozy old house with charm.", artist: "Ethan Rustic", mood: "nostalgic" },
-      { title: "Into the Abyss", imageUrl: "https://source.unsplash.com/600x400/?dark,art", description: "A staircase descending into shadows.", artist: "Damien Noir", mood: "dark" },
-      { title: "Autumn Whispers", imageUrl: "https://source.unsplash.com/600x400/?autumn,art", description: "Golden leaves dancing in the wind.", artist: "Amber Fall", mood: "warm" }
-    ];
+      {
+          title: "Golden Hour",
+          artist: "Olivia Gold",
+          imageUrl: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29",
+          description: "The warm glow of sunset.",
+          mood: "warm",
+          media: "Oil on Canvas"
+      },
+      {
+          title: "Urban Graffiti",
+          artist: "Banksy Jr.",
+          imageUrl: "https://images.unsplash.com/photo-1526498460520-4c246339dccb",
+          description: "A wall full of vibrant street art.",
+          mood: "rebellious",
+          media: "Spray Paint"
+      },
+      {
+          title: "Midnight Reflections",
+          artist: "Noah Dark",
+          imageUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+          description: "A quiet lake under the moonlight.",
+          mood: "calm",
+          media: "Watercolor"
+      },
+      {
+          title: "Vivid Dreams",
+          artist: "Mira Lune",
+          imageUrl: "https://images.unsplash.com/photo-1499084732479-de2c02d45fcc",
+          description: "A mix of colors and surreal shapes.",
+          mood: "imaginative",
+          media: "Digital"
+      },
+      {
+          title: "Mystical Glade",
+          artist: "Elena Myst",
+          imageUrl: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+          description: "A hidden forest path glowing with magic.",
+          mood: "enchanted",
+          media: "Oil on Canvas"
+      },
+      {
+          title: "Celestial Reflections",
+          artist: "Stella Nova",
+          imageUrl: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa",
+          description: "Galaxies reflected in water.",
+          mood: "cosmic",
+          media: "Mixed Media"
+      },
+      {
+          title: "Abstract Chaos",
+          artist: "John Doe",
+          imageUrl: "https://images.unsplash.com/photo-1548092372-0d1bd40894a3",
+          description: "A wild mix of shapes and colors.",
+          mood: "energetic",
+          media: "Acrylic"
+      },
+      {
+          title: "Lonely Road",
+          artist: "Emma White",
+          imageUrl: "https://images.unsplash.com/photo-1516979187457-637abb4f9353",
+          description: "A road that leads into the unknown.",
+          mood: "mysterious",
+          media: "Watercolor"
+      },
+      {
+          title: "Underwater Dreams",
+          artist: "Sophia Blue",
+          imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+          description: "A deep dive into the world of imagination.",
+          mood: "dreamy",
+          media: "Digital"
+      },
+      {
+          title: "Fiery Passion",
+          artist: "Mike Red",
+          imageUrl: "https://images.unsplash.com/photo-1516273638577-0d7a6ec3d252",
+          description: "Intense flames representing raw emotions.",
+          mood: "passionate",
+          media: "Oil on Canvas"
+      }
+  ];
+  
 
+    // Insert new artworks into the database
     await Gallery.insertMany(artworks);
     console.log("Artworks added successfully!");
+
     mongoose.connection.close();
   } catch (error) {
     console.error("Error adding artworks:", error);
