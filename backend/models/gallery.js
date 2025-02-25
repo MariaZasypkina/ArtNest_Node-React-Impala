@@ -6,9 +6,10 @@ const gallerySchema = new mongoose.Schema({
   description: { type: String }, // Short description of the artwork
   artist: { type: String, required: true }, // Author name
   mood: { type: String }, // Mood of the artwork (e.g., happy, dark, surreal)
+  media: { type: String },
   createdAt: { type: Date, default: Date.now } // Timestamp
 });
 
-const Gallery = mongoose.model("Gallery", gallerySchema);
+const Gallery = mongoose.model("Gallery", gallerySchema, 'galleries');
 
 module.exports = Gallery;

@@ -1,0 +1,36 @@
+
+/* Card container for tips and login */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 98vw; 
+    margin: 0 auto;
+  }
+  
+  /* Individual card style */
+  .tip-section,
+  .login-section {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .card-container {
+      padding: 10px;
+    }
+  
+    .tip-section,
+    .login-section {
+      padding: 15px;
+    }
+  }
+  
