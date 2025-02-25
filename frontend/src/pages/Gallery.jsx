@@ -94,6 +94,7 @@ const Gallery = () => {
       setSort(field);
       setOrder("asc");
     }
+    fetchGallery();
   };
 
   return (
@@ -106,21 +107,21 @@ const Gallery = () => {
           type="text"
           placeholder="Search by artist"
           value={search.artist}
-          className="input-field" required 
+          className="input-field"  
           onChange={(e) => setSearch({ ...search, artist: e.target.value })}
         />
         <input
           type="text"
           placeholder="Search by mood"
           value={search.mood}
-          className="input-field" required 
+          className="input-field"  
           onChange={(e) => setSearch({ ...search, mood: e.target.value })}
         />
         <input
           type="text"
           placeholder="Search by description"
           value={search.description}
-          className="input-field" required 
+          className="input-field"  
           onChange={(e) =>
             setSearch({ ...search, description: e.target.value })
           }
@@ -129,7 +130,7 @@ const Gallery = () => {
           type="text"
           placeholder="Search by media"
           value={search.media}
-          className="input-field" required 
+          className="input-field"  
           onChange={(e) => setSearch({ ...search, media: e.target.value })}
         />
         <br></br>

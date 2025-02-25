@@ -7,7 +7,6 @@ const galleryRoutes = require('./routes/galleryRoutes'); // Import Gallery route
 const tipRoutes = require("./routes/tipRoutes"); // Import tip routes
 const commentRoutes = require("./routes/commentRoutes");
 
-
 dotenv.config(); // Load environment variables
 const app = express();
 connectDB(); // Connect to MongoDB
@@ -48,6 +47,7 @@ app.post('/api/upload-form', async (req, res) => {
         res.status(500).json({ message: 'Failed to submit artwork.' });
     }
 });
+
 
 // Use auth routes
 app.use('/api/users', require('./routes/authRoutes'));
