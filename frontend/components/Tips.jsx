@@ -28,9 +28,9 @@ const Tips = () => {
 
   return (
     <div>
-      <h3>Creative Tip</h3>
+      <h3>Creative Tip For You:</h3>
       {loading ? <p>Loading...</p> : error ? <p>{error}</p> : <p>{tip}</p>}
-      <button onClick={fetchRandomTip}>Show another tip</button>
+      <button onClick={fetchRandomTip}className="submit-button">Show another tip</button>
     </div>
   );
 };

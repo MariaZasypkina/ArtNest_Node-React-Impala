@@ -43,13 +43,37 @@ const Login = () => {
   };
 
   return (
-    <div>
+<div className="login-form">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Login</button>
+        <div className="form-group">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="input-field"
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            className="input-field"
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <button type="submit" className="submit-button">Login</button>
+        </div>
       </form>
+
+      <div style={{ marginTop: '10px', textAlign: 'center' }}>
+        <p>Or you can <a href="/register" style={{ color: 'green', textDecoration: 'underline' }}>register here</a>.</p>
+      </div>
     </div>
   );
 };

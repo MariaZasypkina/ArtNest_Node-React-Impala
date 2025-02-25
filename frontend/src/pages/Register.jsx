@@ -37,10 +37,11 @@ const Register = () => {
     <div>
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Register</button>
+        <input type="text" name="name" placeholder="Name" className="input-field"  onChange={handleChange} required />
+        <input type="email" name="email" placeholder="Email" className="input-field"  onChange={handleChange} required />
+        <input type="password" name="password" placeholder="Password" 
+        className="input-field" requied onChange={handleChange} required />
+        <button type="submit" className="submit-button">Register</button>
       </form>
     </div>
   );
