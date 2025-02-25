@@ -27,6 +27,7 @@ const Tips = () => {
   };
 
   return (
+    
     <div>
       <h3>Creative Tip For You:</h3>
       {loading ? <p>Loading...</p> : error ? <p>{error}</p> : <p>{tip}</p>}
