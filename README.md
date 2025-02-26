@@ -41,3 +41,12 @@ Technologies Used
 - **Backend**: Node.js, Express, MongoDB Atlas, JWT
 -**Database**: MongoDB Atlas
 - **Styling**: CSS (vanilla styles or CSS modules)
+
+
+FUTURE FEATURES:
+
+SWAGGER
+Mocha, Chai, and Puppeteer tests
+
+
+
