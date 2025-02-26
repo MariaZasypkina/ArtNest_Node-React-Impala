@@ -2,6 +2,17 @@ Overview
 
 **ArtNest is a platform that combines task management, art galleries, and productivity tips to support creativity and organization.** 
 
+
+Nodels:
+
+Users
+Galleries
+Tips
+
+
+
+
+
 Users can:
 Upload and showcase their artworks.
 Access a random selection of helpful tips for enhancing their productivity and skills.
