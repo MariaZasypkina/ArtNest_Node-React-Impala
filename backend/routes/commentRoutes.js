@@ -1,6 +1,6 @@
 const express = require("express");
-const Comment = require("../models/Comment");
-const Artwork = require("../models/Artwork")
+const Comment = require("../models/comment");
+const Artwork = require("../models/artwork")
 
 const router = express.Router();
 
