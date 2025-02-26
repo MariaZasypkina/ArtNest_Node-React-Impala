@@ -1,5 +1,8 @@
 const express = require("express");
 const Gallery = require('../models/gallery');
+const { updateGallery, deleteGallery } = require("../controllers/galleryController"); // Импорт контроллера
+const authMiddleware = require("../middleware/auth");
+
 
 const router = express.Router();
 
@@ -41,5 +44,9 @@ router.get("/search", async (req, res) => {
         res.status(500).json({ message: "Failed to fetch artworks" });
     }
 });
+
+router.put("/:id", authMiddleware, updateGallery);
+
+router.delete("/:id", authMiddleware, deleteGallery);
 
 module.exports = router;

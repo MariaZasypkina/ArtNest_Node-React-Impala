@@ -7,6 +7,8 @@ const Login = () => {
     password: "",
   });
 
+  const [error, setError] = useState("");    // State for error message
+  const [success, setSuccess] = useState(""); // State for success message
   const navigate = useNavigate(); // Hook for navigation
 
   const handleChange = (e) => {
@@ -28,23 +30,26 @@ const Login = () => {
       });
 
       const data = await response.json();
-      console.log("Response from server:", data);
-
-      if (response.ok) {
-        localStorage.setItem("token", data.token); // Save token
-        alert("Login successful!"); // Temporary success message
-        navigate("/dashboard"); // Redirect after login
-      } else {
-        alert(data.message || "Login failed");
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to login");
       }
+
+      // If login is successful, show success message and save token
+      setSuccess("Login successful! 🎉");
+      localStorage.setItem("token", data.token);
+      setTimeout(() => navigate("/dashboard"), 1500); // Redirect after 1.5 seconds
     } catch (error) {
-      console.error("Error:", error);
+      setError(error.message);  // Display error message
     }
   };
 
   return (
 <div className="login-form">
       <h2>Login</h2>
+
+      {error && <div style={{ color: "red", marginBottom: "10px" }}>{error}</div>}
+      {success && <div style={{ color: "green", marginBottom: "10px" }}>{success}</div>}
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <input
