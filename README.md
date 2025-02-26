@@ -3,7 +3,6 @@ Overview
 **ArtNest is a platform that combines task management, art galleries, and productivity tips to support creativity and organization.** 
 
 Users can:
-Manage their daily tasks.
 Upload and showcase their artworks.
 Access a random selection of helpful tips for enhancing their productivity and skills.
 Features
@@ -22,18 +21,17 @@ Frontend
 Responsive UI: Built with React and vanilla JavaScript.
 Components:
 Header: Navigation and branding.
-ToDoList: Task management interface.
 Gallery: Display and upload artworks.
 Tips: Randomly generated productivity tips.
 Profile: User profile management.
 Pages:
-Home, Login, Register, Dashboard, and 404 Error.
+Home, Login, Register, Dashboard, Gallery, Upload, Supplies, and 404 Error.
 Technologies Used
 
 Backend: Node.js, Express.js, MongoDB Atlas, JWT
 Frontend: React, CSS (vanilla styles or CSS modules)
 Database: MongoDB Atlas
-Deployment Platforms: Render.com (Backend), Vercel/Netlify (Frontend)
+Deployment Platforms: Render.com (Backend/Frontend)
 
 Technologies Used
 
@@ -47,6 +45,8 @@ FUTURE FEATURES:
 
 SWAGGER
 Mocha, Chai, and Puppeteer tests
+ToDoList: Task management interface.
+
 
 
 
